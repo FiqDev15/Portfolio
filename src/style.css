@@ -372,7 +372,7 @@ section {
 
 /* Technologies Section */
 .technologies {
-  background: var(--background-secondary);
+  background: #000000;
   padding: var(--spacing-3xl) 0;
 }
 
@@ -381,7 +381,7 @@ section {
   margin-bottom: var(--spacing-2xl);
   font-size: var(--font-size-3xl);
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .tech-grid {
@@ -398,18 +398,18 @@ section {
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-xl);
-  border: 2px solid var(--border-color);
+  border: 2px solid #333333;
   border-radius: 16px;
-  background: var(--background-primary);
+  background: #111111;
   transition: all var(--transition-normal);
   cursor: pointer;
 }
 
 .tech-item:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-heavy);
-  border-color: var(--primary-color);
-  background: var(--background-primary);
+  box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.1);
+  border-color: #555555;
+  background: #1a1a1a;
 }
 
 .tech-icon {
@@ -434,13 +434,13 @@ section {
 .tech-name {
   font-size: var(--font-size-base);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #ffffff;
   text-align: center;
   transition: color var(--transition-normal);
 }
 
 .tech-item:hover .tech-name {
-  color: var(--primary-color);
+  color: #cccccc;
 }
 
 /* About Section Updates */
