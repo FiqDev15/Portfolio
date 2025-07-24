@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   </head>
   <body>
@@ -301,7 +302,7 @@
             <p>I'm always interested in new opportunities and collaborations.</p>
             
             <!-- Contact Form -->
-            <form id="contact-form" class="contact-form">
+            <form action="https://send.pageclip.co/BYJQR0ESkpl389IAmDxUsyHSQbE6ElcV" class="pageclip-form contact-form" method="post">
               <div class="form-group">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
               </div>
@@ -311,7 +312,9 @@
               <div class="form-group">
                 <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Send Message</button>
+              <button type="submit" class="pageclip-form__submit btn btn-primary">
+                <span>Send Message</span>
+              </button>
             </form>
             
             <div class="contact-divider">
@@ -342,5 +345,6 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   </body>
 </html>
