@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     particlesJS('particles-js', {
       particles: {
         number: {
-          value: 40, // Reduced for lamp effect
+          value: 80,
           density: {
             enable: true,
-            value_area: 1200
+            value_area: 800
           }
         },
         color: {
-          value: ['#22d3ee', '#06b6d4', '#0891b2'] // Cyan theme to match lamp
+          value: ['#667eea', '#764ba2', '#f093fb', '#ff6b6b', '#4ecdc4']
         },
         shape: {
           type: 'circle',
@@ -24,30 +24,30 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
         opacity: {
-          value: 0.3, // More subtle
+          value: 0.6,
           random: false,
           anim: {
             enable: true,
             speed: 1,
-            opacity_min: 0.1,
+            opacity_min: 0.3,
             sync: false
           }
         },
         size: {
-          value: 2, // Smaller particles
+          value: 3,
           random: true,
           anim: {
             enable: true,
             speed: 2,
-            size_min: 0.5,
+            size_min: 1,
             sync: false
           }
         },
         line_linked: {
           enable: true,
-          distance: 120,
-          color: '#22d3ee', // Cyan links
-          opacity: 0.2, // More subtle
+          distance: 150,
+          color: '#ffffff',
+          opacity: 0.4,
           width: 1
         },
         move: {
