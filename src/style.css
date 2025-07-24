@@ -235,13 +235,264 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: transparent;
+  background: #0f172a; /* Dark slate background */
   color: var(--text-light);
   padding-top: 70px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Lamp Container */
+.lamp-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Lamp Light Effects */
+.lamp-light-left, .lamp-light-right {
+  position: absolute;
+  top: 20%;
+  height: 14rem;
+  width: 30rem;
+  opacity: 0.5;
+  transition: all 0.8s ease-in-out;
+  animation: lampGlow 3s ease-in-out forwards;
+}
+
+.lamp-light-left {
+  right: 50%;
+  background: conic-gradient(from 70deg at center top, #06b6d4 0%, transparent 50%, transparent 100%);
+  animation-delay: 0.3s;
+}
+
+.lamp-light-right {
+  left: 50%;
+  background: conic-gradient(from 290deg at center top, transparent 0%, transparent 50%, #06b6d4 100%);
+  animation-delay: 0.3s;
+}
+
+/* Lamp Light Masks */
+.lamp-light-left::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background: #0f172a;
+  mask-image: linear-gradient(to top, white, transparent);
+  -webkit-mask-image: linear-gradient(to top, white, transparent);
+}
+
+.lamp-light-left::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10rem;
+  height: 100%;
+  background: #0f172a;
+  mask-image: linear-gradient(to right, white, transparent);
+  -webkit-mask-image: linear-gradient(to right, white, transparent);
+}
+
+.lamp-light-right::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 10rem;
+  background: #0f172a;
+  mask-image: linear-gradient(to top, white, transparent);
+  -webkit-mask-image: linear-gradient(to top, white, transparent);
+}
+
+.lamp-light-right::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10rem;
+  height: 100%;
+  background: #0f172a;
+  mask-image: linear-gradient(to left, white, transparent);
+  -webkit-mask-image: linear-gradient(to left, white, transparent);
+}
+
+/* Lamp Background Elements */
+.lamp-blur-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 12%);
+  width: 100%;
+  height: 12rem;
+  background: #0f172a;
+  filter: blur(2rem);
+  transform-origin: center;
+  scale: 1.5;
+}
+
+.lamp-blur-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 12%);
+  width: 100%;
+  height: 12rem;
+  background: transparent;
+  backdrop-filter: blur(1rem);
+  opacity: 0.1;
+  z-index: 50;
+}
+
+.lamp-center-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28rem;
+  height: 9rem;
+  background: #06b6d4;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(3rem);
+  z-index: 50;
+  animation: centerGlow 3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.lamp-beam-left, .lamp-beam-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -6rem);
+  height: 9rem;
+  background: #22d3ee;
+  border-radius: 50%;
+  filter: blur(2rem);
+  z-index: 30;
+  animation: beamGlow 3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.lamp-beam-left {
+  width: 8rem;
+  animation-name: beamGlowLeft;
+}
+
+.lamp-beam-right {
+  width: 8rem;
+  animation-name: beamGlowRight;
+}
+
+.lamp-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -7rem);
+  height: 0.125rem;
+  width: 15rem;
+  background: #22d3ee;
+  z-index: 50;
+  animation: lineGlow 3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+.lamp-top-cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -12.5rem);
+  width: 100%;
+  height: 11rem;
+  background: #0f172a;
+  z-index: 40;
+}
+
+/* Hero Content */
 .hero-content {
+  position: relative;
+  z-index: 100;
   animation: fadeInUp 1s ease-out;
+  transform: translateY(-5rem);
+}
+
+.lamp-title {
+  background: linear-gradient(to bottom right, #e2e8f0, #64748b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  animation: titleFadeIn 2s ease-in-out forwards;
+  opacity: 0.5;
+  transform: translateY(6rem);
+}
+
+/* Animations */
+@keyframes lampGlow {
+  0% {
+    opacity: 0.5;
+    width: 15rem;
+  }
+  100% {
+    opacity: 1;
+    width: 30rem;
+  }
+}
+
+@keyframes centerGlow {
+  0% {
+    width: 15rem;
+  }
+  100% {
+    width: 30rem;
+  }
+}
+
+@keyframes beamGlowLeft {
+  0% {
+    width: 8rem;
+  }
+  100% {
+    width: 16rem;
+  }
+}
+
+@keyframes beamGlowRight {
+  0% {
+    width: 8rem;
+  }
+  100% {
+    width: 16rem;
+  }
+}
+
+@keyframes lineGlow {
+  0% {
+    width: 15rem;
+  }
+  100% {
+    width: 30rem;
+  }
+}
+
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0.5;
+    transform: translateY(6rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-title {
