@@ -123,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
     }));
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
   }
 
   // Smooth scrolling for navigation links
