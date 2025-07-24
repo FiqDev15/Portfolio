@@ -876,3 +876,46 @@ section {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Pageclip Thank You Message Customization */
+.pageclip-form--success {
+  background: var(--background-primary) !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 15px !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+.pageclip-form--success .pageclip-form__success {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  padding: var(--spacing-2xl) !important;
+  border-radius: 15px !important;
+}
+
+.pageclip-form--success .pageclip-form__success::before {
+  content: "✓ " !important;
+  color: #4ade80 !important;
+  font-size: var(--font-size-2xl) !important;
+  margin-right: var(--spacing-sm) !important;
+}
+
+/* Mobile responsive for Pageclip */
+@media (max-width: 768px) {
+  .pageclip-form--success {
+    margin: var(--spacing-md) !important;
+    border-radius: 12px !important;
+  }
+  
+  .pageclip-form--success .pageclip-form__success {
+    font-size: var(--font-size-lg) !important;
+    padding: var(--spacing-xl) !important;
+  }
+  
+  .pageclip-form--success .pageclip-form__success::before {
+    font-size: var(--font-size-xl) !important;
+  }
+}
