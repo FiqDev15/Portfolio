@@ -1,0 +1,14 @@
+# GitHub Setup Commands
+# Replace YOUR_GITHUB_USERNAME with your actual GitHub username
+
+# Step 1: Connect to your GitHub repository
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/portfolio.git
+
+# Step 2: Rename branch to main (GitHub's default)
+git branch -M main
+
+# Step 3: Push your code to GitHub
+git push -u origin main
+
+# After this, your portfolio will be on GitHub!
+# Then you can enable GitHub Pages to make it live.
