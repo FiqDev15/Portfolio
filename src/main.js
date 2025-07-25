@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         },
         color: {
-          value: ['#2a2a2a', '#404040', '#555555', '#666666', '#777777']
+          value: ['#3b82f6', '#8b5cf6', '#ef4444', '#06b6d4', '#f59e0b']
         },
         shape: {
           type: 'circle',
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         line_linked: {
           enable: true,
           distance: 150,
-          color: '#404040',
+          color: '#6366f1',
           opacity: 0.4,
           width: 1
         },
@@ -304,4 +304,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   `;
   document.head.appendChild(loadingStyle);
+
+  // Menubar dropdown functionality
+  const menuTrigger = document.getElementById('menu-trigger');
+  const menuContent = document.getElementById('menu-content');
+
+  if (menuTrigger && menuContent) {
+    menuTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuTrigger.classList.toggle('active');
+      menuContent.classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuTrigger.contains(e.target) && !menuContent.contains(e.target)) {
+        menuTrigger.classList.remove('active');
+        menuContent.classList.remove('show');
+      }
+    });
+
+    // Close dropdown when clicking on menu items
+    const menuItems = menuContent.querySelectorAll('.menubar-item');
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuTrigger.classList.remove('active');
+        menuContent.classList.remove('show');
+      });
+    });
+  }
+
+  // Quote section spotlight effect
+  const quoteSection = document.querySelector('.quote-section');
+  if (quoteSection) {
+    quoteSection.addEventListener('mousemove', (e) => {
+      const rect = quoteSection.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      quoteSection.style.setProperty('--mouse-x', `${x}%`);
+      quoteSection.style.setProperty('--mouse-y', `${y}%`);
+    });
+
+    quoteSection.addEventListener('mouseleave', () => {
+      quoteSection.style.setProperty('--mouse-x', '50%');
+      quoteSection.style.setProperty('--mouse-y', '50%');
+    });
+  }
+
+  // Smooth scrolling improvements and project interactions
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+    });
+  });
 });
