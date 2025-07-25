@@ -220,21 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Contact form handling
-  function handleContactForm() {
-    const contactForm = document.querySelector('#contact-form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Add your form handling logic here
-        alert('Thank you for your message! I\'ll get back to you soon.');
-      });
-    }
-  }
-
-  // Initialize contact form
-  handleContactForm();
-  
   // Add smooth reveal animations to elements
   const elements = document.querySelectorAll('.skill-tag, .tech-tag');
   elements.forEach((el, index) => {
