@@ -2354,5 +2354,32 @@ section {
     padding: var(--spacing-sm);
     border-radius: 8px;
   }
+}/* Updated 20250729-005330 */
+
+/* FOOTER CENTERING FIXES - FINAL */
+.footer-brand { align-items: center !important; text-align: center !important; }
+.hero-title { text-align: center !important; }
+.highlight { white-space: nowrap !important; }
+
+/* MOBILE HERO TITLE FIX - Updated 20250729-010111 */
+@media (max-width: 768px) {
+  .hero-title {
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+  }
+  .highlight {
+    display: inline-block !important;
+    white-space: normal !important;
+  }
 }
-/ *   F o r c e   u p d a t e   * / 
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+  }
+  .highlight {
+    white-space: normal !important;
+    word-break: keep-all !important;
+  }
+}
